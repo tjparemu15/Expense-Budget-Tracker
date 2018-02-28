@@ -1,0 +1,8 @@
+{
+  "name": "FinalYear",
+  "app_id": "697b87dc",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
