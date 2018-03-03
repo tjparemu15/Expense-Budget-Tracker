@@ -1,0 +1,40 @@
+page-register {
+    .background{
+       // background: #00BFA5;
+      // background: #002A4D;
+      background: #172F39;
+}
+.scroll-content{
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+p {
+    color:#fff;
+}
+a{
+    color:#fff;
+}
+.text-input ::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff
+    //opacity: 1; /* Firefox */
+}
+.text-input ::-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff
+    //opacity: 1; /* Firefox */
+}
+.text-input::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    //opacity: 1; /* Firefox */
+}
+#divHeading ion-icon {
+    color: #285264;
+        font-size: 125px;}
+
+
+
+
+
+}

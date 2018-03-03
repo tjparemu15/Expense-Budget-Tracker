@@ -1,0 +1,34 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ <!-- <p style= "font-size: 20px ; font-weight: bold; font-family: 'Times new Roman' ;">Personal Infomation</p>-->
+ <ion-card>
+  <ion-card-content>
+    <img src="assets/imgs/contact1.png"/>
+    <!--<img src="{{ auth.user?.profilepic }}"/>-->
+   <!-- <h2>{{ auth.user?.fullname }}</h2>-->
+   <!-- <h3>{{ auth.user?.email }}</h3>-->
+  </ion-card-content>
+</ion-card>
+<ion-list padding>
+  <button ion-item (click)="changeName()">Edit Name</button>
+  <button ion-item (click)="takePicture()">Add Picture</button>
+  <button ion-item (click)="changeEmail()">Change Email</button>
+  <button ion-item (click)="deleteAll()">Delete All</button>
+  <ion-item>
+    <ion-label> Remainders</ion-label>
+    <ion-toggle [(ngModel)]="remainders"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label> Push-Notification</ion-label>
+    <ion-toggle [(ngModel)]="notification"></ion-toggle>
+  </ion-item>
+  <button ion-item (click)="logout()">Logout</button>
+</ion-list>
+
+</ion-content>

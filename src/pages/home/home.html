@@ -1,18 +1,54 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class="header">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button (click) ="gotoSettings()" icon only>
+        <ion-icon name= "settings"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
+ <ion-content padding class ="color">
+ <ion-grid>
+   <ion-row>
+     <ion-col>
+       <ion-card class="background" style="color:white">
+         <ion-card-header></ion-card-header>
+         <ion-card-content>
+          Main Balance
+         </ion-card-content>
+       </ion-card>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+     <ion-col>
+    <ion-card><!--(click) ="toggle_expenses()">-->
+        <ion-card-header ion-text color = "#009688">
+        <div id="pics">Expenses</div> <ion-icon name="remove-circle"></ion-icon>
+        <ion-fab small right>
+          <button class="fab-add" ion-fab  (click)="toggle_expenses()"> <ion-icon name="add" style="color:white" ></ion-icon></button>
+        </ion-fab>
+      </ion-card-header>
+       </ion-card>
+     </ion-col>
+   </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-card> <!--(click) ="toggle_income()">-->
+          <ion-card-header ion-text color = "#009688">
+          <div id="pics">Income</div> <ion-icon name="add-circle"></ion-icon>
+          <ion-fab small right>
+              <button class="fab-sub" ion-fab  (click)="toggle_income()"> <ion-icon name="remove" style="color:white" ></ion-icon></button>
+            </ion-fab>
+        </ion-card-header>
+         </ion-card>
+       </ion-col>
+  </ion-row>
+   <button  style="color:#002A4D"  round outline ion-button block>Set Spending Limit</button>
+   <button  (click) = "savings()" style="color:#002A4D" outline round  ion-button block>Add Savings now</button>
+ </ion-grid>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  
 </ion-content>

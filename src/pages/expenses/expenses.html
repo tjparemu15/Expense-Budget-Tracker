@@ -1,0 +1,68 @@
+<!--
+  Generated template for the ExpensesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Expenses</ion-title>
+  </ion-navbar>
+</ion-header>
+    <ion-content padding class="color">
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <button (click)="goto_income()" outline colour="light" ion-button icon-start>
+                      Income 
+                      <ion-icon name="add"></ion-icon>
+                    </button>
+                  
+              </ion-col>
+              <ion-col >
+                  <button outline colour="light" ion-button icon-left>
+                      Expense
+                      <ion-icon name="remove"></ion-icon>
+                    </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-list>
+            <ion-item class="color">
+              <ion-label floating>Name</ion-label>
+              <ion-input type ="text" ion-text color="primary" [(ngModel)]="expenseItem.expenseName"></ion-input>
+            </ion-item>
+              <ion-item class="color">
+                  <ion-icon name ="add" color="primary" item-left> </ion-icon>
+                  <ion-label>Category</ion-label>
+                  <ion-select [(ngModel)]="expenseItem.expenseCategory">
+                    <ion-option value="food"><ion-icon name="food" ></ion-icon>Food and Drinks</ion-option>
+                    <ion-option value="transportation"><ion-icon name="car" ></ion-icon>transportation</ion-option>
+                    <ion-option value="clothes">Clothes<ion-icon name="dress" ></ion-icon></ion-option>
+                    <ion-option value="entertainent">Entertainment<ion-icon name="music"></ion-icon></ion-option>
+                    <ion-option value="education">Education<ion-icon name="books"></ion-icon></ion-option>
+                    <ion-option value="utilities">Utilities<ion-icon name="tools"></ion-icon></ion-option>
+                  </ion-select>
+                </ion-item>
+         <ion-item class="color">
+            <ion-icon name ="cash" color="primary" item-left> </ion-icon>
+            <ion-label>Amount</ion-label>
+            <ion-input type="number" ion-text color="primary" [(ngModel)]="expenseItem.expenseAmount"></ion-input>
+         </ion-item>
+
+            <ion-item class="color">
+          <ion-icon name ="time" color="primary" item-left> </ion-icon>
+                <ion-label>Date</ion-label>
+                <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month" [(ngModel)]="expenseItem.expenseDate"></ion-datetime>
+              </ion-item>
+              <ion-item class="color">
+                  <ion-icon name ="book" color="primary" item-left> </ion-icon>
+                  <ion-input type="text" placeholder="add notes" ion-text color="light"[(ngModel)]="expenseItem.expenseNotes"></ion-input>
+              </ion-item>
+        </ion-list>
+       <!-- <button block outline ion-button (click)="saveExpense(expenseItem)"> Add expense</button>-->
+        <button class="background" block  ion-button (click)="createExpense(expenseItem)" > Add expense</button>
+    </ion-content>
+    
+
+

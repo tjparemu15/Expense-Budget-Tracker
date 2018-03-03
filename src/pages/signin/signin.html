@@ -1,0 +1,40 @@
+
+<ion-content padding class="background">
+    <div id="divHeading">
+        <ion-icon name="ios-lock-outline"></ion-icon>
+      </div>
+    <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+  <ion-list no-line>
+      <ion-item class="background">
+        <ion-label floating></ion-label>
+        <ion-input  class="text-input" formControlName="email" type="email" placeholder="Your email address" 
+          [class.invalid]="!loginForm.controls.email.valid && blur"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.touched">
+      <p>Please enter a valid email address.</p>
+    </ion-item>
+      <ion-item class="background">
+        <ion-label floating></ion-label>
+        <ion-input class="text-input" formControlName="password" type="password" placeholder="Your password" 
+          [class.invalid]="!loginForm.controls.password.valid && blur"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched">
+      <p>Your password should be more than 6 characters.</p>
+     
+    </ion-item>
+    <button ion-button block clear (click)="goToSignup()">
+      Create a new account
+    </button>
+    <button ion-button block clear (click)="goToResetPassword()">
+      I forgot my password
+    </button>
+    <p> OR</p>
+    <button  ion-button block color="facebook">
+        <ion-icon name= "logo-facebook"></ion-icon>Login with facebook
+    </button>
+  </ion-list>
+  <button ion-button outline round block type="submit" [disabled]="!loginForm.valid">
+      Login
+    </button>
+</form>
+  </ion-content>

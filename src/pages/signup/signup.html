@@ -1,0 +1,31 @@
+
+    <ion-content padding class="background">
+        <div id="divHeading">
+            <ion-icon name="ios-lock-outline"></ion-icon>
+          </div>
+        <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+          <ion-item class="background">
+            <ion-label floating></ion-label>
+            <ion-input formControlName="email" type="email" placeholder="Your email address" 
+              [class.invalid]="!signupForm.controls.email.valid && blur">
+            </ion-input>
+          </ion-item>
+          <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid && signupForm.controls.email.touched">
+              <p>Please enter a valid email address.</p>
+            </ion-item>
+          <ion-item class="background">
+            <ion-label floating></ion-label>
+            <ion-input class="text-input" formControlName="password" type="password" placeholder="Your password" 
+              [class.invalid]="!signupForm.controls.password.valid && blur"></ion-input>
+          </ion-item>
+          <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid && signupForm.controls.password.touched">
+          <p>Your password should be more than 6 characters.</p>
+          </ion-item>
+          <button ion-button block type="submit" [disabled]="!signupForm.valid">
+            Signup
+          </button>
+          <button  ion-button block color="facebook">
+              <ion-icon name= "logo-facebook"></ion-icon>Login with facebook
+          </button>
+        </form>
+      </ion-content>

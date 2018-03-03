@@ -1,0 +1,61 @@
+<!--
+  Generated template for the IncomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="color">
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <button outline colour="light" ion-button icon-start>
+                  Income 
+                  <ion-icon name="add"></ion-icon>
+                </button>  
+          </ion-col>
+          <ion-col >
+              <button (click)= "goto_expense()" outline colour="light" ion-button icon-left>
+                  Expense
+                  <ion-icon name="remove"></ion-icon>
+                </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-list no-line>
+          <ion-item class="color" >
+              <ion-label floating>Name</ion-label>
+              <ion-input type ="text" ion-text color="primary"[(ngModel)]="incomeItem.incomeName"></ion-input>
+          </ion-item>
+          <ion-item class="color">
+              <ion-icon name ="add" color="primary" item-left> </ion-icon>
+              <ion-label>Category</ion-label>
+              <ion-select [(ngModel)]="incomeItem.incomeCategory">
+                <ion-option value="income"><ion-icon name="food"></ion-icon>Income</ion-option>
+                <ion-option value="other jobs"><ion-icon name="car"></ion-icon>Other jobs</ion-option>
+              </ion-select>
+            </ion-item>
+        <ion-item  class="color">
+                <ion-icon name ="cash" color="primary" item-left> </ion-icon>
+                <ion-label>Amount</ion-label>
+                <ion-input type="number" ion-text color="primary" [(ngModel)]="incomeItem.incomeAmount"></ion-input>
+        </ion-item>
+
+        <ion-item class="color">
+      <ion-icon name ="time" color="primary" item-left > </ion-icon>
+            <ion-label>Date</ion-label>
+            <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="incomeItem.incomeDate"></ion-datetime>
+          </ion-item>
+          <ion-item class="color">
+              <ion-icon name ="book" color="primary" item-left> </ion-icon>
+              <ion-input type="text" placeholder="add notes" ion-text color="light" [(ngModel)]="incomeItem.incomeNotes"></ion-input>
+          </ion-item> 
+        </ion-list>  
+        <button block outline ion-button (click)="saveIncome(incomeItem)"> Add Income</button>   
+</ion-content>
