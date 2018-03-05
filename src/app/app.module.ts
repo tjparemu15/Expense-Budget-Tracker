@@ -32,7 +32,10 @@ import { AuthProvider } from '../providers/auth/auth';
 import { SigninPage } from '../pages/signin/signin';
 import { SignupPage } from '../pages/signup/signup';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
-import { ExpenseItemProvider } from '../providers/expense-item/expense-item';
+//import { ExpenseItemProvider } from '../providers/expense-item/expense-item';
+import { ExpenseListProvider } from '../providers/expense-list/expense-list';
+import { IncomeListProvider } from '../providers/income-list/income-list';
+import { CurrencyPipe } from '@angular/common/src/pipes';
 @NgModule({
   declarations: [
     MyApp,
@@ -66,6 +69,7 @@ import { ExpenseItemProvider } from '../providers/expense-item/expense-item';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -93,7 +97,9 @@ import { ExpenseItemProvider } from '../providers/expense-item/expense-item';
     AngularFireAuthModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    ExpenseItemProvider,
+    //ExpenseItemProvider,
+    ExpenseListProvider,
+    IncomeListProvider,
   
     
   ]

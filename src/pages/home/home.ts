@@ -8,6 +8,7 @@ import { SavingsPage } from '../savings/savings';
 import { HistoryPage } from '../history/history';
 import { SettingsPage } from '../settings/settings';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -15,8 +16,9 @@ import { SettingsPage } from '../settings/settings';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-
+    
   }
+  
  toggle_expenses(){
    //fab.close();
    this.navCtrl.push(ExpensesPage);
@@ -36,4 +38,5 @@ export class HomePage {
  gotoSettings(){
    this.navCtrl.push(SettingsPage); 
  }
+ 
 }

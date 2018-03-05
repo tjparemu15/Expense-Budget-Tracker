@@ -6,6 +6,7 @@ import { NgModel } from '@angular/forms';
 import { AlertController } from 'ionic-angular';
 import{AngularFireAuth} from 'angularfire2/auth';
 import{AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { IncomeListProvider, } from '../../providers/income-list/income-list';
 
 @Component({
   selector: 'page-income',
@@ -13,11 +14,11 @@ import{AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database
 })
 export class IncomePage {
   incomeItem = {} as IncomeItem;
-  incomeItemRef$: FirebaseListObservable<IncomeItem[]>;
+  //incomeItemRef$: FirebaseListObservable<IncomeItem[]>;
 
-  constructor(private afAuth: AngularFireAuth,public alertCtrl: AlertController,private database: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams) {
+  constructor( private income:IncomeListProvider, private afAuth: AngularFireAuth,public alertCtrl: AlertController,private database: AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams) {
   
-  this.incomeItemRef$= this.database.list("income-item");
+ // this.incomeItemRef$= this.database.list("income-item");
 }
   public event = {
     month: '2018-02-19',
@@ -27,7 +28,7 @@ export class IncomePage {
   goto_expense(){
     this.navCtrl.push(ExpensesPage);
   }
-  saveIncome(incomeItem: IncomeItem){
+ /* saveIncome(incomeItem: IncomeItem){
     //console.log(expenseItem);
     //pushing items into expense node 
     this.incomeItemRef$.push({
@@ -45,5 +46,19 @@ export class IncomePage {
       });
       alert.present();
       this.navCtrl.pop();
-}
+}*/
+ //createIncome(incomeItem:IncomeItem){
+//   this.income.createIncome(incomeItem);
+
+ //}
+ createIncome(incomeItem:IncomeItem){
+   this.income.createIncome(incomeItem);
+   this.incomeItem = {} as IncomeItem;
+      let alert = this.alertCtrl.create({
+        title: 'Income Added!',
+        buttons: ['OK']
+        });
+        alert.present();
+        this.navCtrl.pop();
+ }
 }

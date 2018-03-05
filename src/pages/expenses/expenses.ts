@@ -8,25 +8,18 @@ import{AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database
 import{AngularFireAuth} from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 import { Injectable } from '@angular/core';
-import { ExpenseItemProvider } from '../../providers/expense-item/expense-item';
+import { ExpenseListProvider } from '../../providers/expense-list/expense-list';
  
 @Component({
   selector: 'page-expenses',
   templateUrl: 'expenses.html',
 })
 export class ExpensesPage {
- // expenseItem = {} as ExpenseItem;
-//  expenseItemRef$: FirebaseListObservable<ExpenseItem[]> = null;
+ expenseItem = {} as ExpenseItem;
  userId: string;
 
-  constructor( private expenseItem: ExpenseItemProvider, private afAuth: AngularFireAuth, public alertCtrl: AlertController,private database: AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams) {
+  constructor( private expense: ExpenseListProvider, private afAuth: AngularFireAuth, public alertCtrl: AlertController,private database: AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams) {
     
-      //this.expenseItemRef$= this.database.list('expense-list');
-
- 
-    //if (!this.userId) return;
-   
-   // return this.expenseItemRef$;
   }
   public event = {
     month: '2018-01-01',
@@ -37,31 +30,6 @@ export class ExpensesPage {
     this.navCtrl.push(IncomePage);
   }
 
-/* saveExpense(expenseItem: ExpenseItem){
-    //console.log(expenseItem);
-    //pushing items into expense node 
-    this.afAuth.authState.take(1).subscribe(auth => {
-      this.database.list(`expenseItem/${auth.uid}`).push({
-        expenseName: this.expenseItem.expenseName||null,
-        expenseAmount: this.expenseItem.expenseAmount||null,
-        expenseDate:this.expenseItem.expenseDate ||null,
-        expenseCategory:this.expenseItem.expenseCategory ||null,
-        expenseNotes:this.expenseItem.expenseNotes||null
-      }).then(
-        () => this.navCtrl.push(HomePage)
-      );
-    
-      
-    });
-    this.expenseItem = {} as ExpenseItem;
-    
-    let alert = this.alertCtrl.create({
-      title: 'Expense Added!',
-      buttons: ['OK']
-      });
-      alert.present();
-      this.navCtrl.pop();
-  }*/
 
 /*saveExpense()
 {
@@ -69,16 +37,18 @@ export class ExpensesPage {
     this.database.object(`expense-item/${auth.uid}`).set(this.expenseItem).then(() => this.navCtrl.pop())
   })
 }*/
-    createExpense(expenseItem:ExpenseItem)  {
+    addExpenseItem(expenseItem:ExpenseItem)  {
      // expenseItem.userId=this.userId
-      this.expenseItem.createExpense(expenseItem);
+      this.expense.addExpenseItem(expenseItem)
+      //.then(()=> this.navCtrl.pop())
+      this.expenseItem = {} as ExpenseItem;
+      let alert = this.alertCtrl.create({
+        title: 'Expense Added!',
+        buttons: ['OK']
+        });
+        alert.present();
+        this.navCtrl.pop();
     }
-          //this.expenseItem.createExpense(expenseItem)
-//.then(ref => {this.navCtrl.setRoot('HomePage',{key: ref.key})
-  //console.log(ref.key);
-//})
-//.then(ref => {
-  //console.log(ref.key);
-//});
+          
 }
 
