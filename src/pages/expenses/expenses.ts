@@ -9,6 +9,7 @@ import{AngularFireAuth} from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 import { Injectable } from '@angular/core';
 import { ExpenseListProvider } from '../../providers/expense-list/expense-list';
+import { ExpenseListPage } from '../expense-list/expense-list';
  
 @Component({
   selector: 'page-expenses',
@@ -47,7 +48,7 @@ export class ExpensesPage {
         buttons: ['OK']
         });
         alert.present();
-        this.navCtrl.pop();
+        this.navCtrl.push(ExpenseListPage);
     }
           
 }

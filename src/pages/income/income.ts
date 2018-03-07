@@ -7,6 +7,7 @@ import { AlertController } from 'ionic-angular';
 import{AngularFireAuth} from 'angularfire2/auth';
 import{AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { IncomeListProvider, } from '../../providers/income-list/income-list';
+import { IncomeListPage } from '../income-list/income-list';
 
 @Component({
   selector: 'page-income',
@@ -59,6 +60,6 @@ export class IncomePage {
         buttons: ['OK']
         });
         alert.present();
-        this.navCtrl.pop();
+        this.navCtrl.push(IncomeListPage);
  }
 }

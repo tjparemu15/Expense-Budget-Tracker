@@ -9,17 +9,14 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
 import { StartupPage } from '../pages/startup/startup';
 import { IncomePage } from '../pages/income/income';
 import { ExpensesPage } from '../pages/expenses/expenses';
 import { LogoutPage } from '../pages/logout/logout';
 import { SavingsPage } from '../pages/savings/savings';
 import { SettingsPage } from '../pages/settings/settings';
-import { UserInfoPage } from '../pages/user-info/user-info';
 import { OverviewPage } from '../pages/overview/overview';
-import { HistoryPage } from '../pages/history/history';
+
  
 import { ChartsModule } from 'ng2-charts';
 import { FIREBASE_CONFIG } from './app.firebase.config';
@@ -36,25 +33,24 @@ import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { ExpenseListProvider } from '../providers/expense-list/expense-list';
 import { IncomeListProvider } from '../providers/income-list/income-list';
 import { CurrencyPipe } from '@angular/common/src/pipes';
+import { TransactionsProvider } from '../providers/transactions/transactions';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage,
-    RegisterPage,
     StartupPage,
     IncomePage,
     ExpensesPage,
     LogoutPage,
     SavingsPage,
     SettingsPage,
-    UserInfoPage,
     OverviewPage,
-    HistoryPage,
     SigninPage,
     SignupPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    
 
 
 
@@ -76,20 +72,17 @@ import { CurrencyPipe } from '@angular/common/src/pipes';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage,
-    RegisterPage,
     StartupPage,
     IncomePage,
     ExpensesPage,
     LogoutPage,
     SavingsPage,
     SettingsPage,
-    UserInfoPage,
     OverviewPage,
-    HistoryPage,
     SigninPage,
     SignupPage,
     ForgotPasswordPage
+    
   ],
   providers: [ 
     StatusBar,
@@ -97,9 +90,9 @@ import { CurrencyPipe } from '@angular/common/src/pipes';
     AngularFireAuthModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    //ExpenseItemProvider,
     ExpenseListProvider,
     IncomeListProvider,
+    TransactionsProvider,
   
     
   ]

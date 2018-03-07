@@ -6,7 +6,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { LoginPage} from '../pages/login/login';
 import {SigninPage } from '../pages/signin/signin';
 import { IncomePage } from '../pages/income/income';
 import { ExpensesPage } from '../pages/expenses/expenses';
@@ -14,16 +13,15 @@ import { SavingsPage } from '../pages/savings/savings';
 import { LogoutPage } from '../pages/logout/logout';
 import { SettingsPage } from '../pages/settings/settings';
 import { StartupPage } from '../pages/startup/startup';
-import {RegisterPage } from '../pages/register/register';
 import {SignupPage } from '../pages/signup/signup';
-import{UserInfoPage} from '../pages/user-info/user-info';
 import{ForgotPasswordPage} from '../pages/forgot-password/forgot-password'
+import {OverviewPage} from '../pages/overview/overview';
 
-import{OverviewPage} from '../pages/overview/overview';
-import { HistoryPage } from '../pages/history/history'; 
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 import { FIREBASE_CONFIG } from './app.firebase.config';
+import { ExpenseListPage } from '../pages/expense-list/expense-list';
+import { IncomeListPage } from '../pages/income-list/income-list';
 //import { Router } from '@angular/router';
 
 @Component({
@@ -48,7 +46,8 @@ export class MyApp {
      // {title: 'Income', component:IncomePage, icon: "add"},
      //{title: 'Expense', component:ExpensesPage, icon: "remove"},
       //{title: 'Savings', component:SavingsPage,icon: "move"},
-      {title: 'History', component:HistoryPage,icon: "move"},
+      {title: 'Income', component: IncomeListPage ,icon: "add"},
+      {title: 'Expense', component: ExpenseListPage,icon:"remove"},
       {title: 'Review', component:OverviewPage, icon: "stats"}
 
     ];
