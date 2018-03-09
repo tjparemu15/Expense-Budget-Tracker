@@ -53,7 +53,7 @@ export class IncomePage {
 
  //}
  createIncome(incomeItem:IncomeItem){
-   this.income.createIncome(incomeItem);
+   this.income.addIncomeItem(incomeItem);
    this.incomeItem = {} as IncomeItem;
       let alert = this.alertCtrl.create({
         title: 'Income Added!',

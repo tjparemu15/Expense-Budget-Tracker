@@ -30,6 +30,8 @@ import { IncomeListPage } from '../pages/income-list/income-list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+ // rootPage: any = ExpenseListPage;
+
   rootPage: any = StartupPage;
 
   pages: Array<{title: string, component: any, icon: string}>;

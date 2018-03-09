@@ -34,6 +34,9 @@ import { ExpenseListProvider } from '../providers/expense-list/expense-list';
 import { IncomeListProvider } from '../providers/income-list/income-list';
 import { CurrencyPipe } from '@angular/common/src/pipes';
 import { TransactionsProvider } from '../providers/transactions/transactions';
+import { ExpenseListPage } from '../pages/expense-list/expense-list';
+import { IncomeListPage } from '../pages/income-list/income-list';
+import { SavingsProvider } from '../providers/savings/savings';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { TransactionsProvider } from '../providers/transactions/transactions';
     SigninPage,
     SignupPage,
     ForgotPasswordPage,
+    ExpenseListPage,
+    IncomeListPage
     
 
 
@@ -81,7 +86,9 @@ import { TransactionsProvider } from '../providers/transactions/transactions';
     OverviewPage,
     SigninPage,
     SignupPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    ExpenseListPage,
+    IncomeListPage
     
   ],
   providers: [ 
@@ -93,6 +100,7 @@ import { TransactionsProvider } from '../providers/transactions/transactions';
     ExpenseListProvider,
     IncomeListProvider,
     TransactionsProvider,
+    SavingsProvider,
   
     
   ]

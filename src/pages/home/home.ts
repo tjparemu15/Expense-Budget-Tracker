@@ -6,6 +6,7 @@ import { ExpensesPage } from '../expenses/expenses';
 import { OverviewPage } from '../overview/overview';
 import { SavingsPage } from '../savings/savings';
 import { SettingsPage } from '../settings/settings';
+import { ExpenseListProvider } from '../../providers/expense-list/expense-list';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { SettingsPage } from '../settings/settings';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController,public loadingCtrl: LoadingController, public expense: ExpenseListProvider) {
     
   }
   
@@ -31,17 +32,15 @@ export class HomePage {
  savings(){
    this.navCtrl.push(SavingsPage);
  }
-//  history(){
-//    this.navCtrl.push(HistoryPage);
-//  }
+
  gotoSettings(){
    this.navCtrl.push(SettingsPage); 
  }
  gotoExpenseList()
 {
   this.presentLoading();
-  
-this.navCtrl.push('ExpenseListPage')
+  //this.expense.LoadingControllerDismiss();
+  this.navCtrl.push('ExpenseListPage')
 } 
 gotoIncomeList()
 {
@@ -57,5 +56,6 @@ presentLoading(){
   setTimeout(() => {
     loading.dismiss();
   }, 600);
+  
 }
 }

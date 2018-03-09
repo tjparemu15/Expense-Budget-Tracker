@@ -1,9 +1,4 @@
-<!--
-  Generated template for the SavingsPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>Savings</ion-title>
@@ -14,17 +9,21 @@
     <ion-list no-lines>
         <ion-item class="color">
             <ion-label floating></ion-label>
-            <ion-input type ="text" ion-text color="primary" placeholder="what are you saving for?"></ion-input>
+            <ion-input type ="text" ion-text color="primary" placeholder="what are you saving for?" [(ngModel)]="savings.Amount"></ion-input>
           </ion-item>
     <ion-item class= "color">
         <ion-label floating> Enter Amount</ion-label>
-        <ion-input type ="number" ion-text color="primary"></ion-input>
+        <ion-input type ="number" ion-text color="primary" [(ngModel)]="savings.Amount"></ion-input>
     </ion-item>
+    <ion-item class= "color">
+      <ion-label floating> Date</ion-label>
+      <ion-input type ="number" ion-text color="primary" [(ngModel)]="savings.Date"></ion-input>
+  </ion-item>
     <ion-item class="color">
       <ion-label>
 Frequency
       </ion-label>
-      <ion-select [(ngModel)]="frequency">
+      <ion-select [(ngModel)]="savings.Category">
       <ion-option value="daily">Daily</ion-option>
       <ion-option value="weekly">Weekly</ion-option>
       <ion-option value="montly">Monthly</ion-option>
@@ -36,6 +35,6 @@ Frequency
     </ion-item>
   </ion-list>
   <ion-item class="color">
-      <button ion-button (click)="Save()"  outline block>Save</button>
+      <button ion-button (click)="addSavings(savings)"  outline block>Save</button>
     </ion-item>
 </ion-content>

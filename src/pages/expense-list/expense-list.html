@@ -20,15 +20,30 @@
             <h3>Notes: {{expenseItem.expenseNotes}}</h3>
           </ion-item> -->
     
-          <ion-item *ngFor="let expenseItem of expen ">
-            <h2>Name:{{expenseItem.expenseName}} </h2>
-            <h2>Amount:{{expenseItem.expenseAmount}}</h2>
-            <h3>Date: {{expenseItem.expenseDate}}</h3>
-            <h3>Category: {{expenseItem.expenseCategory}}</h3>
-            <h3>Notes: {{expenseItem.expenseNotes}}</h3>
-     <button ion-button  (click)="updateEx(expenseItem.key, expenseItem.expenseNotes)"> Update</button>
-     <button ion-button  (click)="deleteEx(expenseItem.key)"> Delete</button>
-          </ion-item>
-     </div> 
+      <ion-item (click)="showOptions(expenseItem.key, expenseItem.expenseNotes)" *ngFor="let expenseItem of expen" >
+        
+       
+            <h2><b>Name:{{expenseItem.expenseName}}</b> </h2>
+            <h4>Amount:{{expenseItem.expenseAmount}}</h4>
+            <h4>Date: {{expenseItem.expenseDate}}</h4>
+            <h4>Category: {{expenseItem.expenseCategory}}</h4>
+            <h4>Notes: {{expenseItem.expenseNotes}}</h4>
+            
+            
+        
+        
+     <!--<ion-item-options side="right" (ionSwipe)="deleteEx(expenseItem.key)">
+          <button ion-button  (click)="updateEx(expenseItem.key, expenseItem.expenseNotes)"></button>
+          <ion-icon class="icon" name="archive"></ion-icon>
+          <button ion-button  (click)="deleteEx(expenseItem.key)"> Delete</button>
+      </ion-item-options>
+      <button ion-button outline (click)="updateEx(expenseItem.key, expenseItem.expenseNotes)"> Edit</button>
+            <button ion-button icon-only outline  (click)="deleteEx(expenseItem.key)">Delete</button>
+    -->
+     
+          
+     
+     </ion-item>
+    </div> 
     </ion-list>
 </ion-content>

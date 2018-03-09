@@ -5,9 +5,9 @@
       </div>
     <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
   <ion-list no-line>
-      <ion-item class="background">
+      <ion-item>
         <ion-label floating></ion-label>
-        <ion-input  class="text-input" formControlName="email" type="email" placeholder="Your email address" 
+        <ion-input formControlName="email" type="email" placeholder="Your email address" 
           [class.invalid]="!loginForm.controls.email.valid && blur"></ion-input>
       </ion-item>
       <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.touched">

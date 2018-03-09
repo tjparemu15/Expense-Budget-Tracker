@@ -19,8 +19,7 @@ export class ExpenseListProvider {
     })
    
   }
-  //: FirebaseListObservable<ExpenseItem[]>
-  // 
+  
   getuserexpenses() {
     var promise = new Promise((resolve, reject) => {
     this.fireusers.child(firebase.auth().currentUser.uid).once('value', (snapshot) => {
@@ -51,10 +50,17 @@ export class ExpenseListProvider {
   
   updateEx(key,newValue): void {
     this.database.object(`/expense-list/${this.userId}/` + key)
-      .update({ expenseName: newValue});    
+      .update({ expenseName: newValue, 
+               // expenseAmount:newValue,
+               // expenseNotes:newValue,
+              },
+             );    
   }
 
   deleteEx(exp): void {
     this.database.object(`/expense-list/${this.userId}/` + exp).remove();
+  }
+  getAmount():void{
+    
   }
 }

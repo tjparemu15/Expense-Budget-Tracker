@@ -30,7 +30,7 @@
         <ion-card-header ion-text color = "#009688">
         <div id="pics">Expenses</div> <ion-icon name="remove-circle"></ion-icon>
         <ion-fab small right>
-          <button class="fab-add" ion-fab  (click)="toggle_expenses()"> <ion-icon name="add" style="color:white" ></ion-icon></button>
+          <button class="fab-sub" ion-fab  (click)="toggle_expenses()"> <ion-icon name="add" style="color:white" ></ion-icon></button>
         </ion-fab>
       </ion-card-header>
        </ion-card>
@@ -42,18 +42,17 @@
           <ion-card-header ion-text color = "#009688">
           <div id="pics">Income</div> <ion-icon name="add-circle"></ion-icon>
           <ion-fab small right>
-              <button class="fab-sub" ion-fab  (click)="toggle_income()"> <ion-icon name="remove" style="color:white" ></ion-icon></button>
+              <button class="fab-add" ion-fab  (click)="toggle_income()"> <ion-icon name="remove" style="color:white" ></ion-icon></button>
             </ion-fab>
         </ion-card-header>
          </ion-card>
        </ion-col>
   </ion-row>
    <button  style="color:#002A4D"  round outline ion-button block>Set Spending Limit</button>
-   <button  (click) = "savings()" style="color:#002A4D" outline round  ion-button block>Add Savings now</button>
-   <button   (click) = "gotoExpenseList()"style="color:#002A4D"  round outline ion-button block>List</button>
-   <button   (click) = "gotoIncomeList()"style="color:#002A4D"  round outline ion-button block>IncomeList</button>
+   <button (click) = "savings()" style="color:#002A4D" outline round  ion-button block>Add Savings now</button>
+  
  
   </ion-grid>
-
-  
+  <!--<button   (click) = "gotoExpenseList()"style="color:#002A4D"  round outline ion-button block> ExpenseList</button>
+  <button   (click) = "gotoIncomeList()"style="color:#002A4D"  round outline ion-button block>IncomeList</button>-->
 </ion-content>

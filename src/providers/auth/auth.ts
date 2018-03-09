@@ -1,4 +1,4 @@
-//import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 
@@ -6,8 +6,7 @@ import firebase from 'firebase';
 export class AuthProvider {
 
   constructor() {
-    //console.log('Hello AuthProvider Provider');
-    //public http: HttpClient
+    
   }
 
 loginUser(email: string, password: string): Promise<any> {
